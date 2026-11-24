@@ -1,0 +1,17 @@
+/* LaSOT comparison site: additions on top of gallery.css (copied from the earlier results site, itself from the archived snapshot). */
+.hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(320px,1fr);gap:24px;align-items:start;margin:10px 0 26px}
+.kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.kpi{background:#1c2633;border-radius:10px;padding:18px 18px 14px;border-left:4px solid #ff5a3c}
+.kpi b{display:block;font-size:34px;line-height:1.1;color:#ffb3a3;font-variant-numeric:tabular-nums}
+.kpi span{display:block;margin-top:6px;color:#cbd6e4;font-size:13px}
+.overview-table table{font-size:14px}
+.overview-table tr.ours td{background:#3a1f1a;font-weight:700}
+img.method{width:100%;background:#fff;border-radius:9px;padding:8px}
+#method p{max-width:1200px;color:#d5dfeb}
+label.check{display:flex;gap:6px;align-items:center;font-size:13px;color:#cbd6e4}
+label.check input{width:auto}
+td.adv-pos{color:#ffb3a3;font-weight:600}
+td.adv-neg{color:#8ea0b6}
+.row-button[disabled]{color:#7d8ea3;cursor:default}
+#seq-note{margin-top:12px;font-size:13px;color:#cbd6e4}
+@media(max-width:1100px){.hero{grid-template-columns:minmax(0,1fr)}}
