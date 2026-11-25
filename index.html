@@ -1,17 +1,17 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex, nofollow, noarchive"><title>LaSOT Tracker Comparison</title>
+<meta name="robots" content="noindex, nofollow, noarchive"><title>PARMA · LaSOT Tracker Comparison</title>
 <link rel="stylesheet" href="assets/gallery.css"><link rel="stylesheet" href="assets/extra.css"><link rel="icon" href="assets/favicon.svg"></head><body>
 <div class="topnav"><a href="#overview">Overview</a><a href="#method">Method</a><a href="#videos">All videos</a></div>
-<h1>Multi-memory SAM 2.1 tracker vs five SAM 2.1 trackers on LaSOT, video by video</h1>
+<h1>PARMA vs five SAM 2.1 trackers on LaSOT, video by video</h1>
 
 <section id="overview" class="hero">
  <div class="kpis">
   <div class="kpi"><b>77.20</b><span>LaSOT AUC, best among SAM 2.1 trackers</span></div>
   <div class="kpi"><b>+1.62</b><span>over the strongest baseline, SENTRY-D4S</span></div>
-  <div class="kpi"><b>72</b><span>of 280 sequences where ours is the best of all six</span></div>
+  <div class="kpi"><b>72</b><span>of 280 sequences where PARMA is the best of all six</span></div>
   <div class="kpi"><b>280</b><span>test sequences; the online run matches offline on every frame</span></div>
  </div>
- <div class="table-wrap overview-table"><table><thead><tr><th>Tracker</th><th>AUC</th><th>P@20</th><th>NP</th></tr></thead><tbody><tr class="ours"><td style="color:#ff5a3c">Ours</td><td>77.20</td><td>83.19</td><td>80.50</td></tr><tr class=""><td style="color:#29bd87">SENTRY-D4S</td><td>75.58</td><td>81.51</td><td>78.95</td></tr><tr class=""><td style="color:#8976ff">SAMURAI</td><td>74.88</td><td>79.70</td><td>77.51</td></tr><tr class=""><td style="color:#e3b337">DAM4SAM</td><td>74.78</td><td>80.54</td><td>78.12</td></tr><tr class=""><td style="color:#ce83d5">HiM2SAM</td><td>74.46</td><td>78.98</td><td>76.72</td></tr><tr class=""><td style="color:#649ada">SAM2.1</td><td>69.49</td><td>73.56</td><td>71.88</td></tr></tbody></table>
+ <div class="table-wrap overview-table"><table><thead><tr><th>Tracker</th><th>AUC</th><th>P@20</th><th>NP</th></tr></thead><tbody><tr class="ours"><td style="color:#ff5a3c">PARMA</td><td>77.20</td><td>83.19</td><td>80.50</td></tr><tr class=""><td style="color:#29bd87">SENTRY-D4S</td><td>75.58</td><td>81.51</td><td>78.95</td></tr><tr class=""><td style="color:#8976ff">SAMURAI</td><td>74.88</td><td>79.70</td><td>77.51</td></tr><tr class=""><td style="color:#e3b337">DAM4SAM</td><td>74.78</td><td>80.54</td><td>78.12</td></tr><tr class=""><td style="color:#ce83d5">HiM2SAM</td><td>74.46</td><td>78.98</td><td>76.72</td></tr><tr class=""><td style="color:#649ada">SAM2.1</td><td>69.49</td><td>73.56</td><td>71.88</td></tr></tbody></table>
  <p class="muted">LaSOT test set, 280 sequences; all six trackers re-scored with one box read-out (mask bounding box) and the official LaSOT protocol.</p></div>
 </section>
 
@@ -21,13 +21,13 @@
 </section>
 
 <h2 id="videos">Video by video</h2>
-<div class="notice">Each video is a 2×3 grid: top-left is our tracker (orange-red box; the line under the title names the branch reported on that frame), the other five panels show the baselines' native masks; the cyan box in every panel is the ground truth. The list is sorted by how far ours is above the best of the five baselines on each sequence.</div>
+<div class="notice">Each video is a 2×3 grid: top-left is PARMA (orange-red box; the line under the title names the branch reported on that frame), the other five panels show the baselines' native masks; the cyan box in every panel is the ground truth. The list is sorted by how far PARMA is above the best of the five baselines on each sequence.</div>
 <div class="grid"><section class="player-box"><h2 id="selected-title"></h2><p class="muted" id="selected-meta"></p><video id="player" controls playsinline preload="metadata"></video><p class="video-status" id="video-status"></p>
 <div class="controls"><button id="previous">Previous</button><button id="next">Next</button><button id="frame-back">−1 frame</button><button id="frame-forward">+1 frame</button><span id="frame-label"></span></div>
 <div class="controls"><input id="frame-input" type="number" min="1" value="1" aria-label="frame"><button id="frame-go">Go</button><select id="speed" aria-label="speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select><button id="fullscreen">Fullscreen</button><a id="open-video" target="_blank">Open video file</a></div>
 <div class="legend" id="legend"></div></section>
 <aside><div class="scorebox"><h3>Scores on this sequence</h3><div id="scores" class="table-wrap"></div><p class="muted" id="seq-note"></p></div></aside></div>
-<div class="toolbar"><input id="search" type="search" placeholder="Search sequence"><select id="sort" aria-label="sort"></select><label class="check"><input type="checkbox" id="only-best"> Only sequences where ours is best</label><span id="count" class="count"></span></div>
+<div class="toolbar"><input id="search" type="search" placeholder="Search sequence"><select id="sort" aria-label="sort"></select><label class="check"><input type="checkbox" id="only-best"> Only sequences where PARMA is best</label><span id="count" class="count"></span></div>
 <div class="scroll"><table><thead id="table-head"></thead><tbody id="table-body"></tbody></table><div id="empty" hidden>No sequence matches.</div></div>
-<footer>Frames from the LaSOT test set (research use only). The top-left panel is drawn from our tracker's per-frame output; the other five panels come from our re-runs of the five baselines. 15 FPS is the viewing rate, not inference speed.</footer>
+<footer>Frames from the LaSOT test set (research use only). The top-left panel is drawn from PARMA's per-frame output; the other five panels come from our re-runs of the five baselines. 15 FPS is the viewing rate, not inference speed.</footer>
 <script src="data/site-data.js"></script><script src="assets/gallery.js"></script></body></html>
